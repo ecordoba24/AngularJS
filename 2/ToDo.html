@@ -22,22 +22,34 @@
 	<link rel="stylesheet" href="../css/ToDo.css">
 </head>
 <body>
-	<div class="container-fluid">
-		<h1>ToDo con AngularJS y Bootstrap</h1>
+	<div class="container-fluid" >
+		<div class="row">
+			<div class="col-md-12">
+				<h1>ToDo con AngularJS y Bootstrap</h1>
+			</div>
+		</div>
 		<div ng-controller="controladorTareas">
-			<!--
-			<ul>
-				<li ng-repeat="tarea in tareas">
-					<input type="checkbox" ng-model="tarea.hecho">
-					<span class="hecho-{{tarea.hecho}}">{{tarea.texto}}</span>
-				</li>
-			</ul>
-			-->
+			<div class="row">
+				<div class="col-md-12">
+					<form class="form-inline" role="form" ng-submit="agregarTarea()">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Agregar Nueva Tarea" ng-model="textoNuevaTarea">
+						</div>
+						<input type="submit" class="btn btn-default" value="Guardar"/>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 
-			<div class="checkbox" ng-repeat="tarea in tareas">
-				<label>
-					<input type="checkbox" ng-model="tarea.hecho"> <span class="hecho-{{tarea.hecho}}">{{tarea.texto}}</span>
-				</label>
+					<div class="checkbox" ng-repeat="tarea in tareas">
+						<label>
+							<input type="checkbox" ng-model="tarea.hecho"> <span class="hecho-{{tarea.hecho}}">{{tarea.texto}}</span>
+						</label>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	</div>
