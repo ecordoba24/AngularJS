@@ -42,4 +42,13 @@ function controladorTareas($scope){
 			return "warning";
 		}
 	};
+
+	$scope.limpiar = function(){
+		var tareasViejas = $scope.tareas;
+		$scope.tareas = [];
+		angular.forEach(tareasViejas, function(tarea) {
+			if (!tarea.hecho) $scope.tareas.push(tarea);
+		});
+		console.log(tareasViejas);
+	};
 }

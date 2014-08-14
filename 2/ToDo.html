@@ -42,15 +42,18 @@
 					<span class="badge">{{tareas.length}}</span> Cantidad de Tareas
 				</div>
 			</div>
-
+			<br>
 			<div class="row">
-				<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="col-md-4 col-sm-4 col-xs-4">
 					<form class="form-inline" role="form" ng-submit="agregarTarea()">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Agregar Nueva Tarea" ng-model="textoNuevaTarea">
 						</div>
 						<input type="submit" class="btn btn-default" value="Guardar"/>
 					</form>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<input type="button" class="btn btn-danger" value="Limpiar" ng-click="limpiar()"/>
 				</div>
 			</div>
 
