@@ -5,7 +5,9 @@ function controladorTareas($scope){
 	];
 
 	$scope.agregarTarea = function() {
-		$scope.tareas.push({texto: $scope.textoNuevaTarea, hecho: false});
-		$scope.textoNuevaTarea = '';
+		if($scope.textoNuevaTarea){
+			$scope.tareas.push({texto: $scope.textoNuevaTarea, hecho: false});
+			$scope.textoNuevaTarea = '';
+		}
 	};
 }
