@@ -28,9 +28,23 @@
 				<h1>ToDo con AngularJS y Bootstrap</h1>
 			</div>
 		</div>
+
 		<div ng-controller="controladorTareas">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4" ng-if="pendientes()">
+					<span class="badge alert-warning">{{pendientes()}}</span>
+					Tareas Pendientes
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4" ng-if="realizadas()">
+					<span class="badge  alert-success">{{realizadas()}}</span> Tareas Realizadas
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-4" ng-if="tareas.length">
+					<span class="badge">{{tareas.length}}</span> Cantidad de Tareas
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
 					<form class="form-inline" role="form" ng-submit="agregarTarea()">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Agregar Nueva Tarea" ng-model="textoNuevaTarea">
@@ -39,6 +53,7 @@
 					</form>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-md-12">
 
@@ -48,8 +63,16 @@
 						</label>
 					</div>
 				</div>
+			</div>
 
-
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="{{porcentajeCompletado()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentajeCompletado()}}%">
+							<span >{{ porcentajeCompletado() | number: 2 }}% Completado</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
