@@ -30,4 +30,16 @@ function controladorTareas($scope){
 	$scope.porcentajeCompletado = function(){
 		return $scope.realizadas()/$scope.tareas.length*100 ;
 	};
+
+	$scope.stylePorcentaje = function(){
+		if($scope.porcentajeCompletado() == 100){
+			return "success";
+		}
+
+		if($scope.porcentajeCompletado() <= 25){
+			return "danger";
+		}else{
+			return "warning";
+		}
+	};
 }

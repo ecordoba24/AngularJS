@@ -68,7 +68,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="progress">
-						<div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="{{porcentajeCompletado()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentajeCompletado()}}%">
+						<div class="progress-bar progress-bar-striped active progress-bar-{{stylePorcentaje()}}"  role="progressbar" aria-valuenow="{{porcentajeCompletado()}}" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentajeCompletado()}}%">
 							<span >{{ porcentajeCompletado() | number: 2 }}% Completado</span>
 						</div>
 					</div>
