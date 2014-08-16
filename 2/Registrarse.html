@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es" ng-app="RegistrarseApp">
+<head>
+	<title>Registrarse</title>
+	<meta charset="utf-8">
+
+	<!-- Bootstrap -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<!-- Bootstrap -->
+
+	<!-- AngularJS -->
+	<script src="../js/angular.min.js"></script>
+	<!-- AngularJS -->
+
+	<script src="../js/Registrarse.js"></script>
+	<link rel="stylesheet" href="../css/Registrarse.css">
+</head>
+<body>
+	<div class="container-fluid" >
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Registrarse</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-3 col-md-2 col-sm-4 col-xs-12">
+				<form name="registrarse" role="form">
+					<div class="form-group" ng-class="{'has-error': registrarse.usuario.$invalid, 'has-success': registrarse.usuario.$valid}">
+						<input type="text" class="form-control" name="usuario" placeholder="Usuario" ng-model="registro.usuario" required >
+						<p class="help-block text-danger" ng-show="registrarse.usuario.$error.required">Campo obligatorio</p>
+					</div>
+					<div class="form-group" ng-class="{'has-error': registrarse.email.$invalid, 'has-success': registrarse.email.$valid}">
+						<input type="email" class="form-control" name="email" placeholder="Email" ng-model="registro.email" required>
+						<p class="help-block text-danger" ng-show="registrarse.email.$error.required">Campo obligatorio</p>
+						<div ng-show="registrarse.email.$dirty && registrarse.email.$invalid">
+							<p class="help-block text-danger" ng-show="registrarse.email.$error.email">Email invalido</p>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-primary" name="registrarse" value="Registrarse" ng-disabled="registrarse.$invalid">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- Bootstrap -->
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- Bootstrap -->
+</body>
+</html>
