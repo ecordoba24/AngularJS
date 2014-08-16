@@ -1,3 +1,5 @@
+var TareasApp = angular.module('TareasApp', []);
+
 function controladorTareas($scope){
 	$scope.tareas = [
 	{texto: 'Aprender HTML', hecho: true },
